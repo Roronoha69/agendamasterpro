@@ -38,15 +38,17 @@ export class ApiService {
 
 
   public async getAgendaFromUserId(id:number) {
+    console.log('USER ID => ', id);
+    
     try {
       const response = await axios.get(`${this.apiUrl}/Agenda`, { headers: this.headers });
-      // console.log("ID BABY +>", id);
+      const userAgenda = response.data.records.filter((record: { fields: { "User": any[]; }; }) => record.fields.User[0] === id)      
       
+      console.log('USER AGENDA => ', userAgenda);
       
-      const userAgenda = response.data.records.filter((record: any) => record.fields.User[0] == id)      
-      // console.log("HARMEL SHAKE =>", userAgenda);
-      
-      return userAgenda
+      this.getContactFromAgenda(userAgenda[0].id)
+
+      return userAgenda    
     } catch (error) {
       console.error('Error fetching data from Airtable:', error);
       throw error;
@@ -54,9 +56,14 @@ export class ApiService {
   }
 
   public async getContactFromAgenda(id: number){
+    console.log('CONTACT ID => ', id);
+    
     try {
       const response = await axios.get(`${this.apiUrl}/Contact`, { headers: this.headers });
-      // const userAgenda = response.data.records.map((record: any) => console.log(record.fields))            
+      
+      const userListTest = response.data.records.filter((record: { fields: { "Agenda": any[]; }; }) => record.fields.Agenda[0] === id)      
+      console.log("USERLIST => ", userListTest);
+                     
       return response
     } catch (error) {
       console.error('Error fetching data from Airtable:', error);
