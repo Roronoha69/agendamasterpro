@@ -3,8 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AgendaComponent } from './agenda/agenda.component';
-import { UserComponent } from './user/user.component';
+import { AgendaComponent } from './Components/agenda/agenda.component';
+import { UserComponent } from './Components/user/user.component';
 
 @NgModule({
   declarations: [
