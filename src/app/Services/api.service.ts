@@ -20,23 +20,48 @@ export class ApiService {
   };
 
 
-  public getUsers(){
-    return axios.get(`${this.apiUrl}/User`, { headers: this.headers })
-      .then(response => response.data)
-      .catch(error => {
-        console.error('Error fetching data from Airtable:', error);
-        throw error;
-      });
+
+  public async getCurrentUserId(login: string){
+    try {
+      const response = await axios.get(`${this.apiUrl}/User`, { headers: this.headers })
+
+      const currentUser = response.data.records.filter((record: { fields: { "login": string; }; }) => record.fields.login === login)
+      // console.log("TANGO => ", currentUser[0].id);
+      
+      this.getAgendaFromUserId(currentUser[0].id)
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching data from Airtable:', error);
+      throw error;
+    }
   }
 
-  public getAgenda(){
-    
-    axios.get(`${this.apiUrl}/Agenda`, { headers: this.headers })
-      .then(response => response.data)
-      .catch(error => {
-        console.error('Error fetching data from Airtable:', error);
-        throw error;
-      });
+
+  public async getAgendaFromUserId(id:number) {
+    try {
+      const response = await axios.get(`${this.apiUrl}/Agenda`, { headers: this.headers });
+      // console.log("ID BABY +>", id);
+      
+      
+      const userAgenda = response.data.records.filter((record: any) => record.fields.User[0] == id)      
+      // console.log("HARMEL SHAKE =>", userAgenda);
+      
+      return userAgenda
+    } catch (error) {
+      console.error('Error fetching data from Airtable:', error);
+      throw error;
+    }
+  }
+
+  public async getContactFromAgenda(id: number){
+    try {
+      const response = await axios.get(`${this.apiUrl}/Contact`, { headers: this.headers });
+      // const userAgenda = response.data.records.map((record: any) => console.log(record.fields))            
+      return response
+    } catch (error) {
+      console.error('Error fetching data from Airtable:', error);
+      throw error;
+    }
   }
 
 }
