@@ -26,17 +26,19 @@ export class AgendaComponent implements OnInit{
   }
 
   ngOnInit(): void {
-      this.getUsers()
+      // this.getUsers()
+      // this.apiService.getAgendaFromUserId()
+      this.apiService.getCurrentUserId("joe")
   }
 
-  getUsers() {
-    this.apiService.getUsers()
-      .then(data => {
-        this.users = data;
-        console.log('Users:', this.users);
-      })
-      .catch(error => {
+  // getUsers() {
+  //   this.apiService.getUsers()
+  //     .then(data => {
+  //       this.users = data;
+  //       console.log('Users:', this.users);
+  //     })
+  //     .catch(error => {
 
-      });
-  }
+  //     });
+  // }
 }
