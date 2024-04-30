@@ -2,20 +2,18 @@
 
 .navbar {
     background-color: #0e0e0e;
-    .navbar-brand {
-      color: #fff;
-      font-weight: bold;
-      &:hover {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-decoration: inherit;
+    height: 4vw;
+    
+    a{
+        font-size: 1vw;
         color: #fff;
-      }
-    }
-    .nav-item {
-      .nav-link {
-        color: #fff;
-        &:hover {
-          color: #aaa;
-        }
-      }
+        text-decoration: inherit;
+        margin: 1vw;
     }
   }
   
