@@ -1,0 +1,32 @@
+// Navbar
+
+.navbar {
+    background-color: #0e0e0e;
+    .navbar-brand {
+      color: #fff;
+      font-weight: bold;
+      &:hover {
+        color: #fff;
+      }
+    }
+    .nav-item {
+      .nav-link {
+        color: #fff;
+        &:hover {
+          color: #aaa;
+        }
+      }
+    }
+  }
+  
+  // Footer
+  .footer {
+    background-color: #0e0e0e;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
