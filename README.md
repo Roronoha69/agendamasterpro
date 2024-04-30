@@ -1,27 +1,28 @@
 # Agendamasterpro
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
+L'application Angular que nous souhaitons développer vise à mettre en place un système de gestion d'agenda et ainsi de pouvoir gerer les contacts et les exporter.
 
-## Development server
+# Prérequis
+  -Une version de Node supérieur a v18.13.0.
+  -Avoir npm ou yarn
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+# Installation
+  -Clonez ce dépôt sur votre machine locale, depuis la develop ou la main (les 2 identiques).
+  -Accédez au répertoire du projet via votre terminal.
+  -Exécutez npm install pour installer toutes les dépendances.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Utilisation
+  -Lancez l'application en exécutant ng serve ou npm run start dans le terminal.
+  -Accédez à l'application via votre navigateur à l'adresse http://localhost:4200/agenda
 
-## Build
+# Fonctionnalités Principales
+  -Agenda : Voir les agendas et les contacts liés
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+ # Lien
+  -La BDD Airtable => https://airtable.com/appd56f4y5wizEu7x/shrd2ubGv9BgHWQnd
 
-## Running unit tests
+# Contribution
+  -Le sujet nous a été donné par DocusLand sur ce lien : https://gitlab.com/docusland-courses/uml/agenda-create-from-uml
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+  
