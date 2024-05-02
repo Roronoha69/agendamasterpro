@@ -7,12 +7,15 @@ import { AgendaComponent } from './Components/agenda/agenda.component';
 import { UserComponent } from './Components/user/user.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { CreateComponent } from './Components/create/create.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     AgendaComponent,
     UserComponent,
+    CreateComponent,
     
   ],
   imports: [
@@ -20,7 +23,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     AppRoutingModule,
     MatTableModule,
     MatPaginatorModule,
-    
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

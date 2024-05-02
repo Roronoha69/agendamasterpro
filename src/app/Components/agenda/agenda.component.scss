@@ -1,4 +1,24 @@
 .table-box{
-    padding: 5vw;
-    margin: 5vw;
+    // width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: flex-start;
+    // align-items: center;
+    flex-direction: column;
+}
+
+.paginator{
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+a.btn {
+    padding: 1vw;
+    color: white;
+    background-color: black;
+    margin: 2vw;
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    text-decoration: none;
 }
